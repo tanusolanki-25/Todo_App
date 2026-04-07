@@ -1,0 +1,23 @@
+.todoItem {
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.todoItem:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Delete Button */
+.deleteBtn {
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  background-color: transparent;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.deleteBtn:hover {
+  background-color: #dc3545;
+  color: white;
+}

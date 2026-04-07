@@ -1,38 +1,20 @@
+import TodoItem from "./TodoItem";
 
-function TodoItems() {
-  let todoName = 'Go to college'
-  let todoDate = '23/09/2026'
-  return(
-     <>
-       <div className="container">
-          <div className="row kg-row">
-            <div className="col-3">
-              {todoName}
-            </div>
-            <div className="col-3">
-                {todoDate}
-            </div>
-            <div className="col-2">
-              <button type="button" className="btn btn-danger kg-button">Delete</button>
-            </div>
-          </div>
-        </div>
-
-         <div className="container">
-          <div className="row kg-row">
-           <div className="col-3">
-              {todoName}
-            </div>
-            <div className="col-3">
-                {todoDate}
-            </div>
-            <div className="col-2">
-              <button type="button" className="btn btn-danger kg-button">Delete</button>
-            </div>
-          </div>
-        </div>
-    </>
-  )
-}   
+function TodoItems({ todoItems, onDeleteClick }) {
+  return (
+    <div className="container mt-3">
+      <div className="items-container">
+        {todoItems.map((item) => (
+          <TodoItem
+            key={item.name}
+            todoName={item.name}
+            todoDate={item.dueDate}
+            onDeleteClick={() => onDeleteClick(item.name)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default TodoItems;
